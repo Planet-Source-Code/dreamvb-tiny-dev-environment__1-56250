@@ -1,0 +1,46 @@
+' ======================================
+' V-Dialog  
+' ======================================
+' Project Name: Project1
+' Date: 9/17/2001
+
+' Other comments:
+' ======================================
+Dim A
+Dim StrA
+Dim StrB
+
+sub main()
+    cmdbut(1).Caption = "Fill List"
+    cmdbut(2).Caption = "E&xit"
+    cmdBut(3).Caption = "Save Results"
+    lblA(1).Caption = "Enter the times table you like to list:"
+    lblA(1).AutoSize = True
+    txtA(1).text = "2"
+end sub
+
+Call Main()
+
+Sub CmdBut_Click()
+    Select Case Index
+    Case 1
+        if txtA(1).text = "" then msgbox "You must include a number"
+        StrA = ""
+        StrB = ""
+        LstA(1).Clear
+        For I = 1 to 12
+            A = cInt(txtA(1).text) * i
+            StrA = I & " x " & txtA(1).text & " = " & A
+            StrB = StrB & StrA & vbcrlf
+            lstA(1).AddItem StrA
+        Next
+    Case 2
+        unloadDialog
+    Case 3
+       WriteFile "C:\tables.txt",cstr(strb)
+       msgbox "Your results have now been saved to c:\tables.txt",vbInformation,"Results Saved"
+       StrA  = ""
+       StrB = ""
+    End Select
+end sub
+

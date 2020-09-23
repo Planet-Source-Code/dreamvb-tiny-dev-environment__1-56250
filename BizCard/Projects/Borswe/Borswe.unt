@@ -1,0 +1,25 @@
+' ======================================
+' V-Dialog  
+' ======================================
+' Project Name: Borswe
+' Date: 9/17/2001
+
+' Other comments:
+' ======================================
+
+Sub Main()
+    Dialog.Caption = "Broswe For Folder"
+    CmdBut(1).Caption = "..."
+End Sub
+
+Sub CmdBut_Click()
+Dim FolName
+    Select Case Index
+        Case 1
+        FolName = BrowseForFolder(Hwnd,"Pick a folder:")
+        txtA(1).Text = FolName
+    End Select
+
+End Sub
+
+Call Main()
