@@ -1,0 +1,28 @@
+' ======================================
+' V-Dialog  
+' ======================================
+' Project Name: CdRom
+' Date: 9/17/2001
+
+' Other comments:
+' ======================================
+
+Sub Main()
+    CmdBut(1).Caption = "Open Draw"
+    CmdBut(2).Caption = "Close Draw"
+    CmdBut(3).Caption = "E&xit"
+End Sub
+
+Sub CmdBut_Click()
+    Select case Index
+        Case 1
+            mciSendStringA "Set CDAudio Door Open Wait", "", 0, 0
+        Case 2
+            mciSendStringA "Set CDAudio Door Closed Wait","",0,0
+        Case 3
+            unloadDialog               
+    End Select
+
+End Sub
+
+Call Main()

@@ -1,0 +1,42 @@
+' ======================================
+' V-Dialog  
+' ======================================
+' Project Name: Info
+' Date: 9/17/2001
+
+' Other comments:
+' ======================================
+
+Sub Main()
+' Print out some text
+    CmdBut(1).Caption = "Click Me"
+    CmdBut(2).Caption = "E&xit"
+    lblA(1).Caption = ""
+    Dialog.Caption = "Information Demo"
+    Dialog.FontSize = 24
+    Dialog.Font = "Arial"
+    Dialog.Autoredraw = True
+    
+    For I = 1 to 255
+        Dialog.CurrentX = 5+i
+        Dialog.CurrentY = 5+i
+        Printf "Information Demo"
+        ForeColorf = rgb(i,0,255)
+    Next
+    
+    Dialog.CenterDialog
+End Sub
+
+Sub CmdBut_Click()
+    Select Case Index
+        Case 1
+            lblA(1).Caption = "Computer Name: " & GetComputerNameA _
+            & vbCrlf & "User Name: " & GetUserNameA _
+            & vbCrlf & "WinDir: " & GetEnvVar("windir") _
+            & vbCrlf & "User Pro File: " & GetEnvVar("USERPROFILE")  
+        Case 2
+            UnloadDialog
+    End Select
+End Sub
+
+call Main()

@@ -1,0 +1,14 @@
+I just noticed this before I was about to upload :)
+
+Ok the projects will not load because of the paths pointing to my system.
+
+If you look in the project file eg mine below.
+
+<Project>
+	<Title>Borswe</Title>
+	<Language>VBScript</Language>
+	<Form>C:\Documents and Settings\Ben\Desktop\VB-Projects\BizCard\Projects\Borswe\Borswe.bfm</Form>
+	<unit>C:\Documents and Settings\Ben\Desktop\VB-Projects\BizCard\Projects\Borswe\Borswe.unt</unit>
+</Project>
+
+You will need to chnage the paths to point to were the project is on your system. I try and fix this for next time.
